@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:petrels/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: jx-org-bot@sharpwit.net
+  token: vault:petrels/pipelineUser:token
+  username: jx-org-bot
+prow:
+  hmacToken: vault:petrels/prow:hmacToken
