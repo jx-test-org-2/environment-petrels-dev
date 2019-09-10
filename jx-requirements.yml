@@ -1,33 +1,38 @@
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  project: ""
+  clusterName: petrels
+  environmentGitOwner: jx-test-org-2
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: ps-dev-201405
   provider: gke
-  zone: ""
-gitops: true
+  zone: us-east1-b
 environments:
 - key: dev
 - key: staging
 - key: production
+gitops: true
 ingress:
-  domain: ""
-  externalDNS: false
+  domain: petrels.gcp.sharpwit.net
+  externalDNS: true
+  namespaceSubDomain: -jx.
   tls:
-    email: ""
-    enabled: false
-    production: false
+    email: certs@sharpwit.net
+    enabled: true
+    production: true
 kaniko: true
 secretStorage: vault
 storage:
   logs:
     enabled: true
-    url: ""
+    url: gs://petrels-logs-89d65f0c-3220-4f8b-8e66-59e84de84cfc
   reports:
     enabled: true
-    url: ""
+    url: gs://petrels-reports-b803e75e-7903-4955-bf39-11ec956bcf30
   repository:
     enabled: true
-    url: ""
+    url: gs://petrels-repository-0d621cc6-ec1c-4e76-bdf1-351d0c90dac0
 versionStream:
   ref: 0c3237feef3846fdfc7f17d4f5946017882414e2
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
